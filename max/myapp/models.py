@@ -66,8 +66,9 @@ class ReestrTSZH(models.Model):
         return str(self.name) + ' ' + str(self.surname) + ' ' + str(self.otchestvo)
 
 class Scans(models.Model):
-        member = models.ForeignKey(ReestrTSZH, on_delete=models.CASCADE)
-        file = models.FileField(
-            upload_to='statements/%Y/'
-        )
-    
+    member = models.ForeignKey(ReestrTSZH, on_delete=models.CASCADE)
+    file = models.FileField(
+        upload_to='statements/%Y/'
+    )
+    class Meta:
+        verbose_name_plural = "Сканы"
