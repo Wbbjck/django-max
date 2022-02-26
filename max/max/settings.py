@@ -82,9 +82,9 @@ WSGI_APPLICATION = 'max.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'maxdb',
-        'USER' : 'admin',
-        'PASSWORD' : 'adm12345',
+        'NAME': 'bd',
+        'USER' : 'TheWar',
+        'PASSWORD' : 'NeverChanges',
         'HOST' : 'localhost',
         'PORT' : '5432',
     }
