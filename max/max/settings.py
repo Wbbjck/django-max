@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 import os
+from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -21,7 +22,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-kln9frbvt6yijlz7=j*viyt#qt1=5zholo37fp6q2q_y@k4%-g'
+SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -101,10 +102,10 @@ WSGI_APPLICATION = 'max.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'maxdb',
-        'USER' : 'admin',
-        'PASSWORD' : 'adm12345',
-        'HOST' : 'localhost',
+        'NAME': config('NAME'),
+        'USER' : config('USER'),
+        'PASSWORD' : config('PASSWORD'),
+        'HOST' : config('HOST'),
         'PORT' : '5432',
     }
 }
